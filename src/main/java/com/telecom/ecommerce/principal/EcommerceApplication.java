@@ -16,12 +16,17 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication
-@ComponentScan("com.telecom.ecommerce.principal")
-@EntityScan("com.telecom.ecommerce.principal")
-@EnableJpaRepositories("com.telecom.ecommerce.principal")
+import com.telecom.ecommerce.entidades.Cliente;
+import com.telecom.ecommerce.entidades.Producto;
+import com.telecom.ecommerce.repositorios.IClienteDAO;
+import com.telecom.ecommerce.repositorios.IProductoDAO;
 
+@SpringBootApplication
+@ComponentScan("com.telecom.ecommerce")
+@EntityScan("com.telecom.ecommerce")
+@EnableJpaRepositories("com.telecom.ecommerce")
 public class EcommerceApplication implements CommandLineRunner {
+	
 	@Autowired
 	IClienteDAO cd;
 	IProductoDAO pd;
@@ -33,19 +38,19 @@ public class EcommerceApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		DateFormat d = new SimpleDateFormat("dd/mm/yyyy");
-		Cliente c1 =  new Cliente();
-		Producto p1 = new Producto();
-		c1.setNombre("Alexis Cabrera");
-		c1.setCodigo_postal(3100);
-		Cliente c2 = new Cliente();
-		c2.setNombre("Marcos Gabriel Miller");
-		c2.setContrasenia("noEnTextoPlano");
-		p1.setNombre("iPhone 11");
-		p1.setComentario("Hola escribo esto porque no me deja no comentar");
-		cd.save(c2);
-		cd.save(c1);
-		pd.save(p1);
+//		DateFormat d = new SimpleDateFormat("dd/mm/yyyy");
+//		Cliente c1 =  new Cliente();
+//		Producto p1 = new Producto();
+//		c1.setNombre("Alexis Cabrera");
+//		c1.setCodigo_postal(3100);
+//		Cliente c2 = new Cliente();
+//		c2.setNombre("Marcos Gabriel Miller");
+//		c2.setContrasenia("noEnTextoPlano");
+//		p1.setNombre("iPhone 11");
+//		
+//		cd.save(c2);
+//		cd.save(c1);
+//		pd.save(p1);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.telecom.ecommerce.principal;
+package com.telecom.ecommerce.entidades;
 
 import java.util.Date;
 import javax.persistence.*;
@@ -9,27 +9,17 @@ public class Cliente {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id_cliente;
-	@Column
-	private Integer id_producto; //esta es la clave foranea
-	@Column
 	private Integer dni;
-	@Column
-	private Integer codigo_postal;
-	@Column
-	private Integer telefono;
-	@Column
 	private String nombre;
-	@Column
 	private String correo;
-	@Column
+	private Integer telefono;
+	private Integer codigo_postal;
 	private String domicilio;
-	@Column
 	private String contrasenia;
-	@Column
 	private Date nacimiento;
 	
 	public Cliente(Integer id_cliente, Integer dni, Integer codigo_postal, Integer telefono, String nombre,
-			String correo, String domicilio, String contrasenia, Date nacimiento, Integer id_producto) {
+			String correo, String domicilio, String contrasenia, Date nacimiento) {
 		super();
 		this.id_cliente = id_cliente;
 		this.dni = dni;
@@ -40,7 +30,6 @@ public class Cliente {
 		this.domicilio = domicilio;
 		this.contrasenia = contrasenia;
 		this.nacimiento = nacimiento;
-		this.id_producto = id_producto;
 	}
 	
 	public Cliente() {}
@@ -51,14 +40,6 @@ public class Cliente {
 
 	public void setId_cliente(Integer id_cliente) {
 		this.id_cliente = id_cliente;
-	}
-	
-	public Integer getId_producto() {
-		return id_producto;
-	}
-	
-	public void setId_producto(Integer id_producto) {
-		this.id_producto = id_producto;
 	}
 
 	public Integer getDni() {
