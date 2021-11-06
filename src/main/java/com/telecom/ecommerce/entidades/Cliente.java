@@ -16,6 +16,8 @@ public class Cliente {
 	private Integer codigo_postal;
 	private String domicilio;
 	private String contrasenia;
+	
+	@Temporal(TemporalType.DATE)
 	private Date nacimiento;
 	
 	public Cliente(Integer id_cliente, Integer dni, Integer codigo_postal, Integer telefono, String nombre,
