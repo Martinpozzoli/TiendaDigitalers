@@ -17,8 +17,6 @@ public class Compra {
 	@OneToMany
 	private List<Producto> productos;
 	private Date comprado;
-	private Date despachado;
-	private Date recibido;
 	
 	/*Con este mapeo, en la BD queda la tabla de compras con su id_compra y el id_cliente
 	 *A la vez se genera otra tabla que relaciona cada compra con los productos que la componen
@@ -30,15 +28,12 @@ public class Compra {
 	}
 
 
-	public Compra(Integer id_compra, Cliente cliente, List<Producto> productos, Date comprado, Date despachado,
-			Date recibido) {
+	public Compra(Integer id_compra, Cliente cliente, List<Producto> productos, Date comprado) {
 		super();
 		this.id_compra = id_compra;
 		this.cliente = cliente;
 		this.productos = productos;
 		this.comprado = comprado;
-		this.despachado = despachado;
-		this.recibido = recibido;
 	}
 
 
@@ -79,26 +74,6 @@ public class Compra {
 
 	public void setComprado(Date comprado) {
 		this.comprado = comprado;
-	}
-
-
-	public Date getDespachado() {
-		return despachado;
-	}
-
-
-	public void setDespachado(Date despachado) {
-		this.despachado = despachado;
-	}
-
-
-	public Date getRecibido() {
-		return recibido;
-	}
-
-
-	public void setRecibido(Date recibido) {
-		this.recibido = recibido;
 	}
 	
 	
